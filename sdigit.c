@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getxenv.c                                          :+:      :+:    :+:   */
+/*   sdigit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 10:33:17 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:04:47 by alechin          ###   ########.fr       */
+/*   Created: 2025/06/18 13:09:58 by alechin           #+#    #+#             */
+/*   Updated: 2025/06/18 13:15:49 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wglbx.h"
 
-char	*getxenv(char **envp, const char *key)
+int sdigit(char *str)
 {
 	int	i;
-	int	len;
-
+	
 	i = 0;
-	len = measure(key);
-
-	while (envp[i])
+	if ((str[i] >= 0 && str[i] <= 9)
+		|| (str[i] == '+' || str[i] == '-')
+		&& (str[i + 1] != '+' || str[i + 1] != '-'))
+		i++;
+	else
+		return (1);
+	while (str[i] != '\0')
 	{
-		if (!ncomp(envp[i], key, len) && envp[i][len] == '=')
-			return (envp[i] + len + 1);
+		if (!(str[i] >= '0' || str[i] <= '9'))
+			return (1);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

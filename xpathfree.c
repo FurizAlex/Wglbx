@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getxenv.c                                          :+:      :+:    :+:   */
+/*   xpathfree.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 10:33:17 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:04:47 by alechin          ###   ########.fr       */
+/*   Created: 2025/06/18 13:27:05 by alechin           #+#    #+#             */
+/*   Updated: 2025/06/18 13:33:25 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wglbx.h"
 
-char	*getxenv(char **envp, const char *key)
+void	xpathfree(char **path, char **path_cmd,
+	char *cmd_slash, char **joins)
 {
 	int	i;
-	int	len;
+	int	j;
+	int	k;
 
 	i = 0;
-	len = measure(key);
-
-	while (envp[i])
-	{
-		if (!ncomp(envp[i], key, len) && envp[i][len] == '=')
-			return (envp[i] + len + 1);
-		i++;
-	}
-	return (NULL);
+	j = 0;
+	k = 0;
+	free(cmd_slash);
+	while (!path[i] || !path_cmd[i])
+		free(path[i++]);
+	free(path);
+	while (!path_cmd[j])
+		free(path_cmd[j++]);
+	free(path_cmd);
+	while (!joins[k])
+		free(joins[k++]);
+	free(joins);
 }

@@ -6,7 +6,7 @@
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:00:32 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/17 10:40:40 by alechin          ###   ########.fr       */
+/*   Updated: 2025/06/18 13:32:54 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,14 @@
 
 char	*getxenv(char **envp, const char *key);
 void	xprompt(char **envp);
+int		comp(const char *s1, const char *s2);
+int		ncomp(const char *s1, const char *s2, size_t n);
+int		measure(char *str);
+int 	sdigit(char *str);
+int		valid_env_ch(char c);
+int		countword(char **wgstr_of_array);
+int		array2clear(char **argv);
+void	xpathfree(char **path, char **path_cmd,
+	char *cmd_slash, char **joins);
 
 #endif

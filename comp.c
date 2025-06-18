@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getxenv.c                                          :+:      :+:    :+:   */
+/*   comp.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 10:33:17 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:04:47 by alechin          ###   ########.fr       */
+/*   Created: 2025/06/18 12:49:22 by alechin           #+#    #+#             */
+/*   Updated: 2025/06/18 12:57:18 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wglbx.h"
 
-char	*getxenv(char **envp, const char *key)
+int	comp(const char *s1, const char *s2)
 {
-	int	i;
-	int	len;
+	size_t	i;
 
 	i = 0;
-	len = measure(key);
-
-	while (envp[i])
-	{
-		if (!ncomp(envp[i], key, len) && envp[i][len] == '=')
-			return (envp[i] + len + 1);
+	while (s1[i] == s2[i] && s1[i] != '\0')
 		i++;
-	}
-	return (NULL);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

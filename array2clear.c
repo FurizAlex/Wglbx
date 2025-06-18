@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getxenv.c                                          :+:      :+:    :+:   */
+/*   array2clear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 10:33:17 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:04:47 by alechin          ###   ########.fr       */
+/*   Created: 2025/06/18 13:25:10 by alechin           #+#    #+#             */
+/*   Updated: 2025/06/18 13:26:24 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wglbx.h"
 
-char	*getxenv(char **envp, const char *key)
+int	array2clear(char **argv)
 {
 	int	i;
-	int	len;
 
 	i = 0;
-	len = measure(key);
-
-	while (envp[i])
-	{
-		if (!ncomp(envp[i], key, len) && envp[i][len] == '=')
-			return (envp[i] + len + 1);
-		i++;
-	}
-	return (NULL);
+	while (argv[i])
+		free(argv[i++]);
+	return (argv);
 }

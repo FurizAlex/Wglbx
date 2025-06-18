@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getxenv.c                                          :+:      :+:    :+:   */
+/*   valenvch.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 10:33:17 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:04:47 by alechin          ###   ########.fr       */
+/*   Created: 2025/06/18 13:17:18 by alechin           #+#    #+#             */
+/*   Updated: 2025/06/18 13:20:35 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* This is basically to check if its a valid environment character */
+
 #include "wglbx.h"
 
-char	*getxenv(char **envp, const char *key)
+static int	ft_isalnum(int c)
 {
-	int	i;
-	int	len;
+	return ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'));
+}
 
-	i = 0;
-	len = measure(key);
-
-	while (envp[i])
-	{
-		if (!ncomp(envp[i], key, len) && envp[i][len] == '=')
-			return (envp[i] + len + 1);
-		i++;
-	}
-	return (NULL);
+int	valid_env_ch(char c)
+{
+	return (ft_isalnum(c) || c == '_' || c == '?');
 }
