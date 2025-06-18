@@ -6,19 +6,17 @@
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 12:58:25 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 12:59:36 by alechin          ###   ########.fr       */
+/*   Updated: 2025/06/18 13:57:30 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wglbx.h"
 
-int	measure(char *str)
+int	measure(const char *str)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (NULL);
 	while (str[i] != '\0')
 		i++;
 	return ((unsigned char)i);

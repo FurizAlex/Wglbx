@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cpypath.c                                          :+:      :+:    :+:   */
+/*   cpyenv.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:33:43 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:39:58 by alechin          ###   ########.fr       */
+/*   Updated: 2025/06/18 13:57:03 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ static char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-
-char cpypath(char **env)
+char	**cpyenv(char **env)
 {
 	int		i;
 	int		num_o_str;
@@ -50,8 +49,11 @@ char cpypath(char **env)
 	envp = malloc((num_o_str + 1) * sizeof(char *));
 	if (!envp)
 		return (NULL);
-	while (envp[i++] != '\0')
-		envp[i] = ft_strdup(envp[i]);
+	while (env[i] != NULL)
+	{
+		envp[i] = ft_strdup(env[i]);
+		i++;
+	}
 	envp[i] = '\0';
 	return (envp);
 }

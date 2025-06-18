@@ -6,7 +6,7 @@
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:19:43 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 12:43:28 by alechin          ###   ########.fr       */
+/*   Updated: 2025/06/18 13:44:00 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	xprompt(char **envp)
 		write(1, "[minishell]$", 13);
 		return ;
 	}
-	write(1, GREEN, ft_strlen(GREEN));
-	write(1, username, ft_strlen(GREEN));
-	write(1, RESET, ft_strlen(RESET));
+	write(1, GREEN, measure(GREEN));
+	write(1, username, measure(GREEN));
+	write(1, RESET, measure(RESET));
 	write(1, ":", 1);
-	write(1, BLUE, ft_strlen(BLUE));
-	write(1, cwd, ft_strlen(cwd));
-	write(1, RESET, ft_strlen(RESET));
+	write(1, BLUE, measure(BLUE));
+	write(1, cwd, measure(cwd));
+	write(1, RESET, measure(RESET));
 	write(1, "$ ", 2);
 }

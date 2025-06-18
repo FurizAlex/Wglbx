@@ -6,16 +6,24 @@
 #    By: alechin <alechin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/17 10:10:29 by alechin           #+#    #+#              #
-#    Updated: 2025/06/17 10:47:50 by alechin          ###   ########.fr        #
+#    Updated: 2025/06/18 13:53:44 by alechin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wglbx.a
 
 SRC = \
-	getxenv.c	\
-	xprompt.c	\
-	endwin.c	\
+	getxenv.c		\
+	xprompt.c		\
+	comp.c			\
+	array2clear.c	\
+	countword.c		\
+	cpyenv.c		\
+	measure.c		\
+	ncomp.c			\
+	sdigit.c		\
+	valenvch.c		\
+	xpathfree.c		\
 
 OBJ = $(SRC:.c=.o)
 

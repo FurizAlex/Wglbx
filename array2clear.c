@@ -6,18 +6,18 @@
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:25:10 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:26:24 by alechin          ###   ########.fr       */
+/*   Updated: 2025/06/18 13:56:46 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wglbx.h"
 
-int	array2clear(char **argv)
+void	array2clear(char **argv)
 {
 	int	i;
 
 	i = 0;
 	while (argv[i])
 		free(argv[i++]);
-	return (argv);
+	free(argv);
 }
