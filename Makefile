@@ -6,7 +6,7 @@
 #    By: alechin <alechin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/17 10:10:29 by alechin           #+#    #+#              #
-#    Updated: 2025/06/18 13:53:44 by alechin          ###   ########.fr        #
+#    Updated: 2025/06/20 17:11:54 by alechin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = \
 	sdigit.c		\
 	valenvch.c		\
 	xpathfree.c		\
+	dupnxtra.c		\
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:00:32 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:59:04 by alechin          ###   ########.fr       */
+/*   Updated: 2025/06/20 17:11:43 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void	array2clear(char **argv);
 void	xpathfree(char **path, char **path_cmd,
 			char *cmd_slash, char **joins);
 char	**cpyenv(char **env);
+char	*dupnxtra(char *str, size_t n);
 
 #endif
