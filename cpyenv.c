@@ -6,37 +6,11 @@
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:33:43 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/18 13:57:03 by alechin          ###   ########.fr       */
+/*   Updated: 2025/07/10 12:43:57 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wglbx.h"
-
-static char	*ft_strdup(const char *s)
-{
-	size_t	n;
-	size_t	i;
-	char	*dup;
-
-	n = 0;
-	while (s[n] != '\0')
-	{
-		n++;
-	}
-	dup = (char *)malloc(n + 1);
-	if (dup == NULL)
-	{
-		return (NULL);
-	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		dup[i] = s[i];
-		i++;
-	}
-	dup[i] = '\0';
-	return (dup);
-}
 
 char	**cpyenv(char **env)
 {
@@ -54,6 +28,6 @@ char	**cpyenv(char **env)
 		envp[i] = ft_strdup(env[i]);
 		i++;
 	}
-	envp[i] = '\0';
+	envp[i] = NULL;
 	return (envp);
 }

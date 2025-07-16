@@ -6,22 +6,18 @@
 /*   By: alechin <alechin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 10:00:32 by alechin           #+#    #+#             */
-/*   Updated: 2025/06/20 17:11:43 by alechin          ###   ########.fr       */
+/*   Updated: 2025/07/10 12:32:30 by alechin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WGLBX_H
 # define WGLBX_H
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <limits.h>
-# include <stddef.h>
+# include "../../includes/minishell.h"
 
-char	*getxenv(char **envp, const char *key);
-void	xprompt(char **envp);
+typedef struct s_minishell	t_minishell;
+
+char	*getxenv(char *envp, t_minishell *e);
 int		comp(const char *s1, const char *s2);
 int		ncomp(const char *s1, const char *s2, size_t n);
 int		measure(const char *str);

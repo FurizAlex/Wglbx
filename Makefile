@@ -6,7 +6,7 @@
 #    By: alechin <alechin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/17 10:10:29 by alechin           #+#    #+#              #
-#    Updated: 2025/06/20 17:11:54 by alechin          ###   ########.fr        #
+#    Updated: 2025/07/10 12:32:47 by alechin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = wglbx.a
 
 SRC = \
 	getxenv.c		\
-	xprompt.c		\
 	comp.c			\
 	array2clear.c	\
 	countword.c		\
